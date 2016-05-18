@@ -1,0 +1,39 @@
+{
+  "songs": [
+      {
+        "title": "Such Dumb Luck",
+        "name": "The Pale",
+        "bio": "The Pale started life in Dublin's Northside in the early 90's but drew their influences from far beyond. For some they are best remembered for their hits 'Butterfly' and 'Dogs with no tails'. But that is only the tip of the iceberg for a band that has steered clear of the beaten track.",
+        "image": "the_pale.jpg",
+        "youtubeId": "lGsawtEQJos"
+      },
+      {
+        "title": "Shake Shake",
+        "name": "REWS",
+        "bio": "REWS is the Irish/ London based high energy female duo consisting of songstress Shauna Tohill and beat-maker Collette Williams who together are creating a genuine buzz with their brand of ultra catchy high energy alt rock.",
+        "image": "rews.jpg",
+        "youtubeId": "QTAx0uUpJz0"
+      },
+      {
+        "title": "I Was Born",
+        "name": "Otherkin",
+        "bio": "Dublin grunge-pop outfit Otherkin keep the raucous rock vibes going in a world of soulless synth pop.",
+        "image": "otherkin.jpg",
+        "youtubeId": "bTkUBgQummw"
+      },
+      {
+        "title": "Nothing Lasts Forever",
+        "name": "MKAI",
+        "bio": "All adept players from an early age, MKAI incorporate wandering guitar figure, piano and electronics into songs replete with a strong sense of melody and urgency.",
+        "image": "mkai.jpg",
+        "youtubeId": "5E5Pquvx5hA"
+      },
+      {
+        "title": "Tempting Me",
+        "name": "In The Willows",
+        "bio": "Formed in 2011 as an acoustic trio, Waterford band In The Willows gained speedy recognition. The band has now evolved to a sextet, still mixing it up across the genres! In The Willows’ debut album saw the group mixing the lines between folk, alternative, pop and rock to create their own heartwarming and aurally fulfilling sound.",
+        "image": "in_the_willows.jpg",
+        "youtubeId": "aI7XUBExCyI"
+      }
+  ]
+}
