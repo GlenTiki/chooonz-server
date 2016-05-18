@@ -26,6 +26,8 @@ let config = Config()
 
 let router = Router()
 
+// let creationQueue = Queue(type: .serial, label: "Writing Queue")
+
 ///
 /// Setup the database
 ///
@@ -40,14 +42,15 @@ for (_, song):(String, JSON) in x {
   let bio = song["bio"].stringValue
   let youtubeId = song["youtubeId"].stringValue
   let image = song["image"].stringValue
-
   songs.add(title: title, name: name, bio: bio, youtubeId: youtubeId, image: image) {
     song in
+    print("added song \(song)")
   }
 }
 
 setupRoutes(router: router, songs: songs)
 
+print("Server is starting on \(config.port).")
+
 let server = HTTPServer.listen(port: config.port!, delegate: router)
 Server.run()
-print("Server is started.")

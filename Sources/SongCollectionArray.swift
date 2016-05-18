@@ -51,6 +51,7 @@ class SongCollectionArray: SongCollection {
     func add(title: String?, name: String?, bio: String?, youtubeId: String?, image: String?, oncompletion: (Song) -> Void ) {
         var original: String
         original = String(self.idCounter)
+        self.idCounter+=1
 
         let newItem = Song( id: original,
                               title: title!,
@@ -60,8 +61,6 @@ class SongCollectionArray: SongCollection {
                               image: image!)
 
         writingQueue.queueAsync() {
-            self.idCounter+=1
-
             self._collection[original] = newItem
 
             // Log.info("Added \(title)")

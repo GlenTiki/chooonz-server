@@ -1,5 +1,4 @@
 FROM ibmcom/swift-ubuntu:latest
-EXPOSE 8090
 USER root
 RUN apt-get update
 RUN apt-get install -y git \
@@ -22,4 +21,5 @@ RUN cd /root && ./configure && make && make install
 RUN cd /root && mkdir chooonz
 COPY . /root/chooonz/
 RUN cd /root/chooonz && swift build -Xcc -fblocks -Xswiftc -I/usr/local/include -Xlinker -L/usr/local/lib
+EXPOSE 8090
 CMD cd /root/chooonz && /root/chooonz/.build/debug/chooonz-server
