@@ -50,4 +50,4 @@ setupRoutes(router: router, songs: songs)
 
 let server = HTTPServer.listen(port: config.port!, delegate: router)
 Server.run()
-print("Server is started on \(config.url).")
+print("Server is started.")

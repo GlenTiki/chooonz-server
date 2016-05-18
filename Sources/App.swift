@@ -59,6 +59,37 @@ func setupRoutes(router: Router, songs: SongCollection) {
     }
   }
 
+  // Get a Song image by ID
+  router.get(config.firstPathSegment + "/:id/image") {
+    request, response, next in
+
+    // A guard let is similar to an if let, but it allows you to check for
+    // bad conditions and return if these bad conditions are met. It allows
+    // for cleaner code as code doesn't need to be nested in uneccessary if
+    // let statements.
+    guard let id = request.params["id"] else {
+      response.status(.badRequest)
+      print("Request does not contain ID")
+      return
+    }
+
+    songs.get(id) {
+      item in
+
+      if let item = item {
+        do {
+          try response.send(fileName: "Images/" + item.image).end()
+        } catch {
+          print("Error sending response")
+        }
+      } else {
+        print("Could not find the item", id)
+        response.status(.notFound)
+        return
+      }
+    }
+  }
+
   // Handle options
   router.options("/*") {
     request, response, next in
