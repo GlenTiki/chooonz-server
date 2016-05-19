@@ -11,6 +11,19 @@ func setupRoutes(router: Router, songs: SongCollection) {
 
   // router.all("/*", middleware: AllRemoteOriginMiddleware())
 
+  // redirect to /songs
+  router.get("/") {
+    request, response, next in
+
+    do {
+      try response.redirect(config.firstPathSegment)
+    } catch {
+      print("problem with redirection")
+    }
+
+    next()
+  }
+
   // Get all the songs
   router.get(config.firstPathSegment) {
     request, response, next in
@@ -103,7 +116,7 @@ func setupRoutes(router: Router, songs: SongCollection) {
   }
 
   // Add a Song list item
-  router.post("/") {
+  router.post(config.firstPathSegment + "/") {
     request, response, next in
 
     guard let body = request.body else {
